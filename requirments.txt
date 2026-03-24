@@ -1,0 +1,4 @@
+streamlit
+Pypdf == 4.2.0
+openai
+python-dotenv
