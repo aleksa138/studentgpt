@@ -1,5 +1,7 @@
 import streamlit as st
 from pypdf import PdfReader
+import pypdf
+st.write("pypdf работает")
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
