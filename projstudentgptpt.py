@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-client = OpenAI(api_key=os.getenv("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"))
+client = OpenAI(api_key=os.getenv("sk-xxxx"))
 
 st.title("📚 AI Конспект лекций")
 
