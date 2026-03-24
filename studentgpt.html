@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Lecture Notes</title>
+</head>
+<body>
+  <h1>📚 AI Конспект</h1>
+
+  <textarea id="text" rows="10" cols="60"></textarea>
+
+  <select id="mode">
+    <option value="summary">Конспект</option>
+    <option value="flashcards">Карточки</option>
+    <option value="test">Тест</option>
+  </select>
+
+  <button onclick="generate()">Сгенерировать</button>
+
+  <pre id="result"></pre>
+
+  <script>
+    async function generate() {
+      const text = document.getElementById("text").value;
+      const mode = document.getElementById("mode").value;
+
+      const res = await fetch("/api/generate", {
+        method: "POST",
+        body: JSON.stringify({ text, mode })
+      });
+
+      const data = await res.json();
+      document.getElementById("result").innerText = data.result;
+    }
+  </script>
+</body>
+</html>
